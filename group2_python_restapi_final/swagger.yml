@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: Car Registration Catalog
-  description: Information about car registration
+  title: Cars Registration Catalog
+  description: Information about cars registration
   version: 1.0.0
 servers:
   - url: /api
@@ -15,10 +15,10 @@ paths:
         "200":
           description: Successfully retrieved information about car registration
     post:
-      summary: Create a new CarID
+      summary: Create a new car registration
       operationId: api.create_instance
       requestBody:
-        description: Create a new Car ID
+        description: Create a new car ID
         content:
           application/json:
             schema:
@@ -28,7 +28,7 @@ paths:
         "201":
           description: Successfully created
         "409":
-          description: Provided CarID already exists
+          description: Provided car ID already exists
   /instances/{name}:
     get:
       summary: Read one instance
@@ -37,15 +37,15 @@ paths:
         - $ref: "#/components/parameters/name"
       responses:
         "200":
-          description: Successfully read one instance
+          description: Successfully read one car information
     delete:
-      summary: Delete one instance
+      summary: Delete one entry
       operationId: api.delete_instance
       parameters:
         - $ref: "#/components/parameters/name"
       responses:
         "200":
-          description: Successfully deleted instance
+          description: Successfully deleted Car entry
         "404":
           description: Car ID does not exist
     put:
@@ -54,7 +54,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/name"
       requestBody:
-        description: Create a new instance
+        description: Create a new entry
         content:
           application/json:
             schema:
@@ -62,12 +62,12 @@ paths:
               $ref: "#/components/schemas/Instance"
       responses:
         "200":
-          description: Car infomration updated successfully
+          description: Car infomation updated successfully
 components:
   schemas:
     Instance:
       required:
-        - name
+        - CarID
       properties:
         name:
           type: string
@@ -77,8 +77,8 @@ components:
           type: string
   parameters:
     name:
-      name: name
-      description: Instance name
+      name: CarID
+      description: Car ID number
       in: path
       required: true
       schema:
