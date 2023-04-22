@@ -7,7 +7,7 @@ servers:
   - url: /api
 
 paths:
-  /cars:
+  /Cars:
     get:
       summary: Get all information about car registration
       operationId: api.read_all
@@ -22,7 +22,7 @@ paths:
         content:
           application/json:
             schema:
-              x-body-name: instance
+              x-body-name: instances
               $ref: "#/components/schemas/Instance"
       responses:
         "201":
