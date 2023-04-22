@@ -4,11 +4,10 @@ WORKDIR /app
 
 EXPOSE 8000
 
-COPY group2_python_restapi_final/app
+COPY group2_python_restapi_final /app
+
 
 RUN python -m pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-COPY run.py .
-
-CMD ["python", "run.py"]
+CMD ["python", "app.py"]
