@@ -10,7 +10,7 @@ def get_all_instances():
                 instance_dict = {
                     'CarID': instance[0],
                     'Reg_Number': instance[1],
-                    'VIN': instance[2]
+                    'VIN': instance[2],
                     'Engine_type': instance[3]
                 }
                 instance_list.append(instance_dict)
