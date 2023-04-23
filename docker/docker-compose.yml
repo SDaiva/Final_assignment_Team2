@@ -19,7 +19,7 @@ services:
             - mysql
   app:
     build: .
-    container_name: python
+    container_name: python1
     depends_on:
       - mysql
     restart: always
